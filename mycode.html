@@ -1,0 +1,157 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+	integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/static/css/style.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 align="center">Patient Registration</h1>
+	<marquee>
+		<h3>We are here to serve you.</h3>
+	</marquee>
+
+
+
+	<div class="container">
+		<!-- Content here -->
+
+		<div class="card">
+			<div class="card-block">
+
+				<div class="form-group">
+					<sf:form action="${pageContext.request.contextPath}/doCreate"
+						method="post" modelAttribute="patient">
+
+						<div class="form-group">
+
+							<tr>
+								<td>Name:</td>
+								<td><sf:input type="text" path="patientName"></sf:input><br>
+									<sf:errors path="patientName" cssClass="error" /></td>
+
+							</tr>
+						</div>
+						<tr>
+							<td>Gender:</td>
+
+
+							<td>Male: <sf:radiobutton path="patientGender" value="M" />
+								Female: <sf:radiobutton path="patientGender" value="F" />
+								Other: <sf:radiobutton path="patientGender" value="others" />
+							</td>
+
+
+						</tr>
+
+						<tr>
+							<td>Age:</td>
+							<td><sf:input type="text" path="patientAge"></sf:input><br>
+								<sf:errors path="patientAge" cssClass="error" /></td>
+						</tr>
+						<tr>
+							<td>Date:</td>
+							<td><sf:input type="text" path="patientRegisterDate"></sf:input><br>
+								<sf:errors path="patientRegisterDate" cssClass="error" /></td>
+						</tr>
+						<tr>
+
+							<td>Current Health:</td>
+						</tr>
+						<tr>
+
+							<td>Hyper Tension</td>
+							<td><sf:checkbox path="currentHealth" value="hyperTension" /></td>
+
+
+						</tr>
+
+						<tr>
+
+							<td>Blood Pressure</td>
+							<td><sf:checkbox path="currentHealth" value="bloodPressure" /></td>
+
+						</tr>
+
+						<tr>
+
+							<td>Blood Sugar</td>
+							<td><sf:checkbox path="currentHealth" value="bloodSugar" /></td>
+
+						</tr>
+						<tr>
+
+							<td>Over Weight</td>
+							<td><sf:checkbox path="currentHealth" value="overWeight" /></td>
+
+						</tr>
+
+
+						<tr>
+
+							<td>Habits:</td>
+						</tr>
+						<tr>
+
+							<td>Smoking</td>
+							<td><sf:checkbox path="habits" value="smoking" /></td>
+
+
+						</tr>
+
+						<tr>
+
+							<td>Alcohol</td>
+							<td><sf:checkbox path="habits" value="alcohol" /></td>
+
+						</tr>
+
+						<tr>
+
+							<td>Daily Exercise</td>
+							<td><sf:checkbox path="habits" value="dailyExercise" /></td>
+
+						</tr>
+						<tr>
+
+							<td>Drugs</td>
+							<td><sf:checkbox path="habits" value="drugs" /></td>
+
+						</tr>
+						<tr>
+							<td><input type="submit" value="Create"></td>
+						</tr>
+
+
+
+
+
+
+
+					</sf:form>
+				
+
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+		integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+		crossorigin="anonymous"></script>
+</body>
+</html>
